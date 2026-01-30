@@ -9,10 +9,14 @@ public class PrimeFactor {
     public static int calculatePrimeFactor(int n){
         int count = 0;
         for(int i=1;i*i<=n;i++){
-            if(n%i==0){
-                return       count++;
+
+            if(n%i==0) {
+                if (i == n / i) {
+                    return count++;
+                }
+                return count += 2;
+
             }
-            return    count+=2;
         }
         return -1;
     }
